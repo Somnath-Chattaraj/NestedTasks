@@ -13,7 +13,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
-import { GithubLogo, GoogleLogo, EnvelopeSimple, LockKey } from "@phosphor-icons/react";
+import { GithubLogo, GoogleLogo, EnvelopeSimple, LockKey, TreeStructure } from "@phosphor-icons/react";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import { authClient } from "@/lib/auth-client";
@@ -70,12 +70,19 @@ export default function SignInPage() {
         }
     };
     return (
-        <div className="flex min-h-svh w-full items-center justify-center p-6 md:p-10 bg-background dark text-foreground">
-            <div className="w-full max-w-sm">
-                <Card className="border-border/50 bg-card/50 backdrop-blur-xl shadow-2xl relative overflow-hidden transition-all duration-300 hover:shadow-primary/5 hover:border-primary/20">
-                    {/* Subtle gradient glow effect */}
-                    <div className="absolute -top-24 -right-24 h-48 w-48 rounded-full bg-primary/10 blur-3xl" />
-                    <div className="absolute -bottom-24 -left-24 h-48 w-48 rounded-full bg-blue-500/10 blur-3xl" />
+        <div className="flex min-h-svh w-full items-center justify-center p-6 md:p-10 bg-gray-50 text-gray-900">
+            <div className="w-full max-w-sm flex flex-col items-center gap-6">
+                <Link href="/" className="flex items-center gap-2 font-bold text-xl">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground shadow-sm">
+                        <TreeStructure size={20} weight="bold" />
+                    </div>
+                    <span>FlowTodo</span>
+                </Link>
+
+                <Card className="border-border/50 bg-white/80 backdrop-blur-xl shadow-xl w-full relative overflow-hidden">
+                    {/* Subtle gradient glow effect - adjusted for light theme */}
+                    <div className="absolute -top-24 -right-24 h-48 w-48 rounded-full bg-primary/20 blur-3xl opacity-50" />
+                    <div className="absolute -bottom-24 -left-24 h-48 w-48 rounded-full bg-blue-500/20 blur-3xl opacity-50" />
 
                     <CardHeader className="space-y-1 text-center relative z-10">
                         <CardTitle className="text-2xl font-bold tracking-tight">Welcome back</CardTitle>
